@@ -23,15 +23,17 @@ public class PT_Base_CC_Move : MonoBehaviour {
             V3_move_direction.y = 0;
             V3_move_direction.z = Input.GetAxis("Vertical");
             V3_move_direction = V3_move_direction * fl_MovementSpeed * Time.deltaTime;
-            if(Input.GetButtonUp("Jump"))
-            {
-                V3_move_direction.y = fl_JumpForce;
-            }
+
         }
         else
         {
             V3_move_direction.y -= fl_gravity * Time.deltaTime;
         }
+        if (cc_Reference_To_Character_Controller.isGrounded && Input.GetButton("Jump"))
+        {
+            V3_move_direction.y = fl_JumpForce;
+        }
+
         cc_Reference_To_Character_Controller.Move(V3_move_direction);
     }
 }
