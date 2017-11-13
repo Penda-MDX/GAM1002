@@ -8,10 +8,11 @@ public class PT_Base_CC_Move : MonoBehaviour {
     public float fl_JumpForce = 8.0f;
     private Vector3 V3_move_direction = Vector3.zero;
     private CharacterController cc_Reference_To_Character_Controller;
-	// Use this for initialization
-	void Start () {
+    private PT_LevelManager levelManagerReference;
+    // Use this for initialization
+    void Start () {
         cc_Reference_To_Character_Controller = GetComponent<CharacterController>();
-
+        levelManagerReference = GameObject.Find("LevelManager").GetComponent<PT_LevelManager>();
     }	
 	// Update is called once per frame
 	void Update () {
@@ -36,4 +37,10 @@ public class PT_Base_CC_Move : MonoBehaviour {
 
         cc_Reference_To_Character_Controller.Move(V3_move_direction);
     }
+
+    void FallToDeath()
+    {
+        transform.position = levelManagerReference.lastGoodCheckpoint.position;
+    }
+
 }
