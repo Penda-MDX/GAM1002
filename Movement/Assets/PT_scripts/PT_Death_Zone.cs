@@ -16,7 +16,7 @@ public class PT_Death_Zone : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        print("Death");
+        //print("Death");
         other.gameObject.SendMessage("FallToDeath",null, SendMessageOptions.DontRequireReceiver);
     }
 }
