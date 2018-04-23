@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 136595350250355402}
   - component: {fileID: 23083582693008722}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: ReplaceMe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68,7 +68,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1599385395779648}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.025, y: 3.619, z: -6.3}
+  m_LocalPosition: {x: 2.6, y: 1.7, z: -5.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4071207522326128}
