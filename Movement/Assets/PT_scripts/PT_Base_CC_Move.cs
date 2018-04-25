@@ -25,12 +25,15 @@ public class PT_Base_CC_Move : MonoBehaviour {
             V3_move_direction.z = Input.GetAxis("Vertical");
             V3_move_direction = V3_move_direction * fl_MovementSpeed * Time.deltaTime;
 
-            Vector3 direction = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-            Vector3 rightMovement = Vector3.right * Input.GetAxis("Horizontal");
-            Vector3 upMovement = Vector3.forward * Input.GetAxis("Vertical");
+            if (V3_move_direction.x != 0 || V3_move_direction.z != 0)
+            {
+                Vector3 direction = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+                Vector3 rightMovement = Vector3.right * Input.GetAxis("Horizontal");
+                Vector3 upMovement = Vector3.forward * Input.GetAxis("Vertical");
 
-            Vector3 heading = Vector3.Normalize(rightMovement + upMovement);
-            transform.forward = heading;
+                Vector3 heading = Vector3.Normalize(rightMovement + upMovement);
+                transform.forward = heading;
+            }
 
         }
         else
