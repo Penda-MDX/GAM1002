@@ -842,7 +842,12 @@ Prefab:
     - target: {fileID: 114315642918737640, guid: 5344d1b86d413bb45819a024dcf8e04b,
         type: 2}
       propertyPath: fl_JumpForce
-      value: 0.3
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114315642918737640, guid: 5344d1b86d413bb45819a024dcf8e04b,
+        type: 2}
+      propertyPath: fl_gravity
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5344d1b86d413bb45819a024dcf8e04b, type: 2}
