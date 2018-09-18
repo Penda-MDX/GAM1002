@@ -405,7 +405,7 @@ GameObject:
   - component: {fileID: 581336591}
   - component: {fileID: 581336590}
   m_Layer: 0
-  m_Name: LevelManger
+  m_Name: LevelManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -683,6 +683,11 @@ Prefab:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 114315642918737640, guid: 5344d1b86d413bb45819a024dcf8e04b,
+        type: 2}
+      propertyPath: levelManagerReference
+      value: 
+      objectReference: {fileID: 581336590}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5344d1b86d413bb45819a024dcf8e04b, type: 2}
   m_IsPrefabAsset: 0
