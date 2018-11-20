@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PT_Base_CC_Move : MonoBehaviour {
+    //public properties
     public float fl_MovementSpeed = 6f;
     public float fl_gravity = 15f;
     public float fl_JumpForce = 8.0f;
+
+    //private properties
     private Vector3 V3_move_direction = Vector3.zero;
     private CharacterController cc_Reference_To_Character_Controller;
     private PT_LevelManager levelManagerReference;
+
     // Use this for initialization
     void Start () {
         cc_Reference_To_Character_Controller = GetComponent<CharacterController>();
