@@ -57,8 +57,17 @@ public class PT_Moving_Platform : MonoBehaviour {
 
     void CalculateJourney()
     {
+        //if there is a pause at the end don't 
+        //start time until the pause is over
+        if (pauseAtEnd)
+        {
+            startTime = pauseUntil;
+        }
+        else
+        {
+            startTime = Time.time;
+        }
 
-        startTime = Time.time;
         if (currentWayPoint == wayPoints.Count - 1)
         {
             startMarker = wayPoints[currentWayPoint].transform;
