@@ -43,8 +43,11 @@ public class PT_Moving_Platform : MonoBehaviour {
         //when near the waypoint change to the next waypoint
         if (Vector3.Distance(transform.position, endMarker.position) < movementSpeed / 4)
         {
-            paused = true;
-            pauseUntil = Time.time + pauseTime;
+            if (pauseAtEnd)
+            {
+                paused = true;
+                pauseUntil = Time.time + pauseTime;
+            }
 
             currentWayPoint++;
             if (currentWayPoint > wayPoints.Count - 1)
