@@ -6,6 +6,7 @@ public class PT_TriggerWithActivate : MonoBehaviour {
     public bool bl_activate=false;
     public GameObject objectToActivate;
 
+    private bool bl_canActivate = false;
     private PT_LevelManager currentLevelManager;
     
     // Use this for initialization
@@ -18,22 +19,30 @@ public class PT_TriggerWithActivate : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey("e"))
-        {
-            bl_activate = true;
-        }
-        else
-        {
-            bl_activate = false;
-        }
+
+            if (Input.GetKeyUp("e") && bl_canActivate)
+            {
+                bl_activate = !bl_activate;
+                objectToActivate.SetActive(bl_activate);
+            }
+
+
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
+            bl_canActivate = true;
             currentLevelManager.ShowMessage("Press E to activate");
-            objectToActivate.SetActive(bl_activate);
         }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            bl_canActivate = false;
+        }
+
     }
 }
 
