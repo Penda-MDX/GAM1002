@@ -28,4 +28,14 @@ public class PT_Change_Colour : MonoBehaviour {
             hasChanged = true;
         }
     }
+    void OnTriggerExit(Collider other)
+    {
+        //if the colour has not already changed 
+        if (hasChanged)
+        {
+            //change it
+            _Renderer.material = startMaterial;
+            hasChanged = false;
+        }
+    }
 }

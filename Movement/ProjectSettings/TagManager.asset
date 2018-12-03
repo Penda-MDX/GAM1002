@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Checkpoint
   - Platform
+  - Movable
   layers:
   - Default
   - TransparentFX
