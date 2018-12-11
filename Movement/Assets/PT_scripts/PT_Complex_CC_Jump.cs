@@ -14,6 +14,7 @@ public class PT_Complex_CC_Jump : MonoBehaviour {
     private CharacterController cc_Reference_To_Character_Controller;
     private PT_LevelManager levelManagerReference;
     private bool canJumpAgain = true;
+    private bool isClimbing = false;
 
     // Use this for initialization
     void Start()
@@ -33,6 +34,13 @@ public class PT_Complex_CC_Jump : MonoBehaviour {
             MovePC(fl_MovementSpeed);
 
         }
+        else if (isClimbing)
+        {
+            canJumpAgain = true;
+            //V3_move_direction.y = 0;
+
+            MovePC(fl_MovementSpeed);
+        }
         else
         {
             //AirMovementSpeed
@@ -40,7 +48,7 @@ public class PT_Complex_CC_Jump : MonoBehaviour {
             V3_move_direction.y -= fl_gravity * Time.deltaTime;
 
             //if the PC is falling (has passed apogee) then increase the gravity impact
-            if (V3_move_direction.y < 0)
+            if (V3_move_direction.y < 0 && !isClimbing)
             {
                 V3_move_direction.y -= (fl_gravity * Time.deltaTime)*fallMultiplier;
             }
@@ -60,24 +68,59 @@ public class PT_Complex_CC_Jump : MonoBehaviour {
 
     void MovePC(float _speed)
     {
-        V3_move_direction.x = Input.GetAxis("Horizontal") * _speed * Time.deltaTime;
-        V3_move_direction.z = Input.GetAxis("Vertical") * _speed * Time.deltaTime;
-        
-        //Uses the direction of movement to turn the character to face the direction of travel
-        if (V3_move_direction.x != 0 || V3_move_direction.z != 0)
+        if (!isClimbing)
         {
-            Vector3 direction = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-            Vector3 rightMovement = Vector3.right * Input.GetAxis("Horizontal");
-            Vector3 upMovement = Vector3.forward * Input.GetAxis("Vertical");
+            V3_move_direction.x = Input.GetAxis("Horizontal") * _speed * Time.deltaTime;
+            V3_move_direction.z = Input.GetAxis("Vertical") * _speed * Time.deltaTime;
+        
+            //Uses the direction of movement to turn the character to face the direction of travel
+            if (V3_move_direction.x != 0 || V3_move_direction.z != 0)
+            {
+                Vector3 direction = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+                Vector3 rightMovement = Vector3.right * Input.GetAxis("Horizontal");
+                Vector3 upMovement = Vector3.forward * Input.GetAxis("Vertical");
 
-            Vector3 heading = Vector3.Normalize(rightMovement + upMovement);
-            transform.forward = heading;
+                Vector3 heading = Vector3.Normalize(rightMovement + upMovement);
+                transform.forward = heading;
+            }
         }
+        else
+        {
+            //climbing
+            V3_move_direction.x = Input.GetAxis("Horizontal") * _speed * Time.deltaTime;
+            V3_move_direction.y = Input.GetAxis("Vertical") * _speed * Time.deltaTime;
+
+            //Uses the direction of movement to turn the character to face the direction of travel
+            if (V3_move_direction.x != 0 || V3_move_direction.z != 0)
+            {
+                Vector3 direction = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+                Vector3 rightMovement = Vector3.right * Input.GetAxis("Horizontal");
+                Vector3 upMovement = Vector3.forward * Input.GetAxis("Vertical");
+
+                Vector3 heading = Vector3.Normalize(rightMovement + upMovement);
+                transform.forward = heading;
+            }
+        }
+
     }
     void FallToDeath()
     {
         transform.position = levelManagerReference.lastGoodCheckpoint.position;
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Climbable")
+        {
+            isClimbing = true;
+        }
+    }
 
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Climbable")
+        {
+            isClimbing = false;
+        }
+    }
 }
