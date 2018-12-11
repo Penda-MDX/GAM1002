@@ -84,7 +84,7 @@ public class PT_Complex_CC_Jump : MonoBehaviour {
                 transform.forward = heading;
             }
         }
-        else
+        else if(isClimbing)
         {
             //climbing
             V3_move_direction.x = Input.GetAxis("Horizontal") * _speed * Time.deltaTime;
