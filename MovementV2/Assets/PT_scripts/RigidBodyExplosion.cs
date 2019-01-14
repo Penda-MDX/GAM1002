@@ -9,12 +9,13 @@ public class RigidBodyExplosion : MonoBehaviour {
     public float minusX, minusZ, plusX, plusZ, forceStrength, forceRadius,coolDown;
     private float timeToReady;
 
+    private int originalShots;
     public int numberOfShots;
     
 
 	// Use this for initialization
 	void Start () {
-
+        originalShots = numberOfShots;
     }
 	
 	// Update is called once per frame
@@ -46,5 +47,10 @@ public class RigidBodyExplosion : MonoBehaviour {
             numberOfShots--;
             timeToReady = Time.time + coolDown;
         }
+    }
+
+    public void ResetMe()
+    {
+        numberOfShots = originalShots;
     }
 }
