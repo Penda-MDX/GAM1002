@@ -11,7 +11,10 @@ public class RigidBodyExplosion : MonoBehaviour {
 
     private int originalShots;
     public int numberOfShots;
-    
+    public AudioClip[] listoFSounds;
+    public AudioSource thingThatPLaysSounds;
+
+    private AudioClip soundToPlay;
 
 	// Use this for initialization
 	void Start () {
@@ -25,6 +28,11 @@ public class RigidBodyExplosion : MonoBehaviour {
 
     public void GoExplode()
     {
+        int rndNo = Random.Range(0, listoFSounds.Length - 1);
+        soundToPlay = listoFSounds[rndNo];
+
+        thingThatPLaysSounds.PlayOneShot(soundToPlay);    
+
         if (numberOfShots >= 0 && timeToReady<Time.time)
         {
             //loop through number of bits times instantiating RB parts with a random velocity
