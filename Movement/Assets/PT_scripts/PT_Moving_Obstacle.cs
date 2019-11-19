@@ -25,7 +25,7 @@ public class PT_Moving_Obstacle : MonoBehaviour {
         //
         transform.LookAt(temporaryVector3);
         //move towards the waypoint
-        transform.Translate((Vector3.forward * movementSpeed * Time.deltaTime));
+        transform.Translate(Vector3.forward * movementSpeed * Time.deltaTime);
         //when near the waypoint change to the next waypoint
         if (Vector3.Distance(transform.position, temporaryVector3) < movementSpeed/4)
         {
