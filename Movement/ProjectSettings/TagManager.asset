@@ -8,6 +8,7 @@ TagManager:
   - Platform
   - Movable
   - Climbable
+  - Swingable
   layers:
   - Default
   - TransparentFX
