@@ -9,11 +9,21 @@ EditorBuildSettings:
     path: Assets/PT_scenes/start scene.unity
     guid: bf0172a109e4eb644a4b8315df4d4871
   - enabled: 1
-    path: Assets/PT_scenes/Level03.unity
-    guid: 00bac5ef5bb1fa74db508b0e62e3f932
-  - enabled: 1
     path: Assets/PT_scenes/Level01.unity
     guid: fd451447fd9bc424894972d9dc33eed9
   - enabled: 1
     path: Assets/PT_scenes/level02.unity
     guid: 1ea183ffc8e56b04e8242d5d621a5ff9
+  - enabled: 1
+    path: Assets/PT_scenes/Level03.unity
+    guid: 00bac5ef5bb1fa74db508b0e62e3f932
+  - enabled: 1
+    path: Assets/PT_scenes/Level04_message_demo.unity
+    guid: 6fe18b762fbcd0a42a744a174c8824c7
+  - enabled: 1
+    path: Assets/PT_scenes/Level05_physics.unity
+    guid: 5e69154c537bdea4e8bd4d9fbd77a197
+  - enabled: 1
+    path: Assets/PT_scenes/Level06.unity
+    guid: fa892a35425f67a4cae1bf8a037cb981
+  m_configObjects: {}

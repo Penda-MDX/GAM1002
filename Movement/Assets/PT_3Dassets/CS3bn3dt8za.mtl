@@ -1,0 +1,17 @@
+# VOXELCANVAS @ voxelover
+
+newmtl mat0
+illum 1
+Ka 0.000 0.000 0.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+d 1.0
+map_Kd CS3bn3dt8za.png
+
+newmtl mat1
+illum 1
+Ka 0.000 0.000 0.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+d 0.5
+map_Kd CS3bn3dt8za.png

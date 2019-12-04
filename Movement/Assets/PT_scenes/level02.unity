@@ -957,7 +957,7 @@ MonoBehaviour:
     type: 3}
   InGamePointer: {fileID: 344965444}
   IsOn: 1
-  ShotCoolDown: 1
+  ShotCoolDown: 0.1
   ThrowForce: 3000
   distanceFromCamera: 12
 --- !u!4 &1046348050
