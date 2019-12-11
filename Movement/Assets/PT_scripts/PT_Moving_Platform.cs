@@ -25,7 +25,7 @@ public class PT_Moving_Platform : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (!paused||!pauseAtEnd)
         {
@@ -95,7 +95,7 @@ public class PT_Moving_Platform : MonoBehaviour {
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if(other.gameObject.tag == "Player")
         {
             other.gameObject.transform.parent = null;
         }
