@@ -24,7 +24,7 @@ public class PT_Moving_Platform : MonoBehaviour {
         CalculateJourney();
     }
 
-    // Update is called once per frame
+    // FixedUpdate is called based on the Fixed Time settings in project time
     void FixedUpdate()
     {
         if (!paused||!pauseAtEnd)
