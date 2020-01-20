@@ -7,23 +7,46 @@ public class DoorInteraction : MonoBehaviour
 {
     public DoorData transitionInformation;
     public TransitionData currentTransitionManager;
+    public GameObject objectToChange;
+    public Renderer objectRendererToChange;
+    public Material failColour;
+    public float timeToReset = 1.5f;
+    private float resetTime;
+    private Material startColour;
     private bool byDoor;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        startColour = objectRendererToChange.material;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (resetTime != 0f && resetTime < Time.time)
+        {
+            objectRendererToChange.material = startColour;
+        }
+
         if (byDoor && Input.GetKeyUp("e"))
         {
-            currentTransitionManager.currentDoorTransition = transitionInformation;
-            SceneManager.LoadScene(transitionInformation.targetSceneName);
+            if (transitionInformation != null)
+            {
+                currentTransitionManager.currentDoorTransition = transitionInformation;
+                SceneManager.LoadScene(transitionInformation.targetSceneName);
+            }
+            else
+            {
+                Debug.Log("Locked or Something Wrong");
+                
+                objectRendererToChange.material = failColour;
+                resetTime = Time.time + timeToReset;
+            }
         }
     }
+
 
     private void OnTriggerEnter(Collider other)
     {

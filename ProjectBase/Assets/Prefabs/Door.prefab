@@ -149,3 +149,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecddfc13555057347abcb55f93dc179a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  transitionInformation: {fileID: 0}
+  currentTransitionManager: {fileID: 11400000, guid: 81b00a7bd8c79314d94610a61612a043,
+    type: 2}
+  objectToChange: {fileID: 2983396215713656900}
+  objectRendererToChange: {fileID: 2983396215713656907}
+  failColour: {fileID: 2100000, guid: 5fed807d3e7c5ef4d9ef8c4cd072b3dd, type: 2}
+  timeToReset: 1.5
