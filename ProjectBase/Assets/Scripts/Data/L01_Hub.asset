@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7805f76614e49ba46a720d2e727a536f, type: 3}
-  m_Name: Level01_to_Sample
+  m_Name: L01_Hub
   m_EditorClassIdentifier: 
-  doorName: L01_Sample
-  targetSceneName: SampleScene
-  arrivalPosition: {x: 3, y: 1.6, z: 0}
-  arrivalRotation: {x: 0, y: -90, z: 0}
+  doorName: To Hub
+  targetSceneName: 00Hub
+  arrivalPosition: {x: -12.5, y: 1.6, z: 20}
+  arrivalRotation: {x: 0, y: 90, z: 0}

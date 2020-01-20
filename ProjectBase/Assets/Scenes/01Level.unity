@@ -631,7 +631,7 @@ PrefabInstance:
         type: 3}
       propertyPath: transitionInformation
       value: 
-      objectReference: {fileID: 11400000, guid: 7d4e451155ee7184c8f48c9a9f8ea246,
+      objectReference: {fileID: 11400000, guid: 4c3dc7677cfff8e4f8ba016bafd71852,
         type: 2}
     - target: {fileID: 5810535576892778735, guid: f08adef21f885544f8dbcd4ee47e1d99,
         type: 3}

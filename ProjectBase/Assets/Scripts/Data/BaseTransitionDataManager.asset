@@ -12,7 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb302827f514dc8498f6c5dfe948bdef, type: 3}
   m_Name: BaseTransitionDataManager
   m_EditorClassIdentifier: 
-  currentDoorTransition: {fileID: 11400000, guid: bacc78a45d38c314eaaaf711d496fd6e,
+  currentDoorTransition: {fileID: 11400000, guid: bc5afc439ea43bf46b4ce15f7323c02f,
     type: 2}
-  targetScene: 00Hub
-  previousScene: SampleScene
