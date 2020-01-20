@@ -2,24 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveScript : MonoBehaviour
+public class MoveandRotate : MonoBehaviour
 {
+
     public float fl_MovementSpeed = 6f;
     public float AirMovementSpeed = 3f;
     public float fl_gravity = 15f;
     public float fl_JumpForce = 8.0f;
     public float fallMultiplier = 2.0f;
-    //Private 
+
     private Vector3 V3_move_direction = Vector3.zero;
     private CharacterController cc_Reference_To_Character_Controller;
     private bool canJumpAgain = true;
-
-    // Use this for initialization
+    // Start is called before the first frame update
     void Start()
     {
         cc_Reference_To_Character_Controller = GetComponent<CharacterController>();
-        //  levelManagerReference = GameObject.Find("LevelManager").GetComponent<PT_LevelManager>();
     }
+
     // Update is called once per frame
     void Update()
     {
@@ -60,23 +60,14 @@ public class MoveScript : MonoBehaviour
         cc_Reference_To_Character_Controller.Move(V3_move_direction);
     }
 
+
     void MovePC(float _speed)
     {
-        V3_move_direction.x = Input.GetAxis("Horizontal") * _speed * Time.deltaTime;
-        V3_move_direction.z = Input.GetAxis("Vertical") * _speed * Time.deltaTime;
-        /*
-        //Uses the direction of movement to turn the character to face the direction of travel
-        if (V3_move_direction.x != 0 || V3_move_direction.z != 0)
-        {
-            Vector3 direction = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-            Vector3 rightMovement = Vector3.right * Input.GetAxis("Horizontal");
-            Vector3 upMovement = Vector3.forward * Input.GetAxis("Vertical");
+        Vector3 _temp_direction = Vector3.zero;
 
-            Vector3 heading = Vector3.Normalize(rightMovement + upMovement);
-            transform.forward = heading;
-        }
-        */
+        _temp_direction.x = Input.GetAxis("Horizontal") * _speed * Time.deltaTime;
+        _temp_direction.z = Input.GetAxis("Vertical") * _speed * Time.deltaTime;
+        V3_move_direction = gameObject.transform.TransformDirection(_temp_direction);
     }
-
 
 }

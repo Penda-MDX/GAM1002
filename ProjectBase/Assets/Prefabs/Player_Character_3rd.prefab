@@ -92,11 +92,11 @@ GameObject:
   m_Component:
   - component: {fileID: 3458041350076092227}
   - component: {fileID: 8083451922010609741}
-  - component: {fileID: 1658344991}
   - component: {fileID: 1658344994}
+  - component: {fileID: 347983238}
   m_Layer: 0
   m_Name: Player_Character_3rd
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -135,23 +135,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1658344991
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5012153841716507932}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a67625f4f73926247b54ee6972361455, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fl_MovementSpeed: 6
-  AirMovementSpeed: 3
-  fl_gravity: 15
-  fl_JumpForce: 8
-  fallMultiplier: 2
 --- !u!114 &1658344994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,8 +152,25 @@ MonoBehaviour:
   sensitivityY: 15
   minimumX: -360
   maximumX: 360
-  minimumY: -60
-  maximumY: 60
+  minimumY: -20
+  maximumY: 20
+--- !u!114 &347983238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5012153841716507932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53efcf3e6df552e4a891815aa188c932, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fl_MovementSpeed: 6
+  AirMovementSpeed: 3
+  fl_gravity: 15
+  fl_JumpForce: 8
+  fallMultiplier: 2
 --- !u!1 &7035157485663062152
 GameObject:
   m_ObjectHideFlags: 0
