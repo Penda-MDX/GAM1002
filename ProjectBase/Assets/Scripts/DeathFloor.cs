@@ -37,5 +37,9 @@ public class DeathFloor : MonoBehaviour
             PC = other.gameObject;
 
         }
+        if (other.gameObject.tag == "Destructible")
+        {
+            Destroy(other.gameObject);
+        }
     }
 }
