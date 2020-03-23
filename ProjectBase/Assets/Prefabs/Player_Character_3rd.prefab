@@ -155,6 +155,7 @@ GameObject:
   - component: {fileID: 8083451922010609741}
   - component: {fileID: 1658344994}
   - component: {fileID: 347983238}
+  - component: {fileID: 8737428133154689481}
   m_Layer: 0
   m_Name: Player_Character_3rd
   m_TagString: Player
@@ -233,6 +234,22 @@ MonoBehaviour:
   fl_gravity: 15
   fl_JumpForce: 8
   fallMultiplier: 2
+--- !u!114 &8737428133154689481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5012153841716507932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74e484bd508032d439865d8777a3892f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InventoryList:
+  - {fileID: 11400000, guid: 22b52b3985b02eb438357c21972c3d46, type: 2}
+  - {fileID: 11400000, guid: d2815a6251bbd0a42aae194faf50e46c, type: 2}
+  selectedImage: {fileID: 0}
 --- !u!1 &7035157485663062152
 GameObject:
   m_ObjectHideFlags: 0
