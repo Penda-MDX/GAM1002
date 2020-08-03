@@ -25,7 +25,7 @@ public class PT_Moving_Platform : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (!paused||!pauseAtEnd)
         {
