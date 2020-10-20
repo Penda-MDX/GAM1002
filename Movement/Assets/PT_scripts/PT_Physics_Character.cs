@@ -20,7 +20,7 @@ public class PT_Physics_Character : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
         //playing with wall running
         //make foot more than 1 in z axis
         //characterRB.useGravity = true;
