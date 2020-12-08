@@ -20,10 +20,7 @@ public class PT_Physics_Character : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void FixedUpdate () {
-        //playing with wall running
-        //make foot more than 1 in z axis
-        //characterRB.useGravity = true;
+	void Update () {
         if (footScript.isGrounded)
         {
             if (characterRB.velocity.magnitude < maxVelocity)
@@ -36,8 +33,6 @@ public class PT_Physics_Character : MonoBehaviour {
                 {
                     characterRB.AddRelativeForce(V3_move_direction);
                     characterRB.drag = movingDrag;
-                    //playing with wall running
-                    //characterRB.useGravity = false;
                 }
                 else
                 {
@@ -45,7 +40,10 @@ public class PT_Physics_Character : MonoBehaviour {
                 }
                 
             }
-            
+           else
+           {
+                characterRB.drag = groundDrag;
+           }
 
             if (Input.GetButton("Jump"))
             {

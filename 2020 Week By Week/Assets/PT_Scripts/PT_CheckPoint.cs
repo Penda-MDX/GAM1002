@@ -26,12 +26,15 @@ public class PT_CheckPoint : MonoBehaviour {
     {
 
         //print(_Renderer.material.name);
-
-        if (_Renderer.material.name == "Red (Instance)")
+        if(other.gameObject.tag =="Player")
         {
-            //print("Change");
-            _Renderer.material = mt_Blue;
-            levelManagerReference.lastGoodCheckpoint = transform;
+            if (_Renderer.material.name == "Red (Instance)")
+            {
+                //print("Change");
+                _Renderer.material = mt_Blue;
+                levelManagerReference.lastGoodCheckpoint = transform;
+            }
         }
+
     }
 }

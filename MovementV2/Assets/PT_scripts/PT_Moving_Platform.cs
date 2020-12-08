@@ -24,7 +24,7 @@ public class PT_Moving_Platform : MonoBehaviour {
         CalculateJourney();
     }
 
-    // Update is called once per frame
+    // FixedUpdate is called based on the Fixed Time settings in project time
     void FixedUpdate()
     {
         if (!paused||!pauseAtEnd)
@@ -95,7 +95,7 @@ public class PT_Moving_Platform : MonoBehaviour {
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if(other.gameObject.tag == "Player")
         {
             other.gameObject.transform.parent = null;
         }

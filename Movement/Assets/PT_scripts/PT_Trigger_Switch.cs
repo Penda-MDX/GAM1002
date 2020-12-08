@@ -19,6 +19,7 @@ public class PT_Trigger_Switch : MonoBehaviour {
     {
         if(other.gameObject.tag == "Player")
         {
+            //Debug.Log("Something is in the trigger!");
             objectToBeActivated.SetActive(true);
         }
     }
