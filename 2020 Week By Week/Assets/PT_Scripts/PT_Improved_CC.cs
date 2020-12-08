@@ -10,6 +10,7 @@ public class PT_Improved_CC : MonoBehaviour
     public float Gravity = -9.81f;
     public float GroundDistance = 0.2f;
     public float DashDistance = 5f;
+    public float FallMultiplier = 3.0f;
     public LayerMask Ground;
     public Vector3 Drag;
 
@@ -44,8 +45,15 @@ public class PT_Improved_CC : MonoBehaviour
             _velocity += Vector3.Scale(transform.forward, DashDistance * new Vector3((Mathf.Log(1f / (Time.deltaTime * Drag.x + 1)) / -Time.deltaTime), 0, (Mathf.Log(1f / (Time.deltaTime * Drag.z + 1)) / -Time.deltaTime)));
         }
 
-
-        _velocity.y += Gravity * Time.deltaTime;
+        //start to fall
+        if (_velocity.y < 0)
+        {
+            _velocity.y += (Gravity * Time.deltaTime)*FallMultiplier;
+        }else //going up
+        {
+            _velocity.y += Gravity * Time.deltaTime;
+        }
+        
 
         _velocity.x /= 1 + Drag.x * Time.deltaTime;
         _velocity.y /= 1 + Drag.y * Time.deltaTime;
