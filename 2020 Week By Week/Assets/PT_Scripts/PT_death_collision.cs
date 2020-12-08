@@ -19,14 +19,15 @@ public class PT_death_collision : MonoBehaviour
         {
             Transform respawnPoint = levelManager.GetComponent<PT_LevelManager>().lastGoodCheckpoint;
 
-            collidingPlayerCharacter.transform.position = respawnPoint.position;
+            collidingPlayerCharacter.transform.position = respawnPoint.transform.position;
             //its done now turn it off
             respawn = false;
         }
 	}
 
-    private void OnCollisionEnter(Collision hit)
+    public void OnCollisionEnter(Collision hit)
     {
+        Debug.Log("Hit " + hit.gameObject.name);
         if (hit.gameObject.tag == "Player")
         {
             //this doesn't work with CC as it would need to happen in 
