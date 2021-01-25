@@ -35,6 +35,8 @@ public class DoorInteraction : MonoBehaviour
             if (transitionInformation != null)
             {
                 currentTransitionManager.currentDoorTransition = transitionInformation;
+                currentTransitionManager.transiting = true;
+
                 SceneManager.LoadScene(transitionInformation.targetSceneName);
             }
             else

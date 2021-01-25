@@ -7,5 +7,6 @@ public class TransitionData : ScriptableObject
 {
 
     public DoorData currentDoorTransition;
+    public bool transiting;
     
 }

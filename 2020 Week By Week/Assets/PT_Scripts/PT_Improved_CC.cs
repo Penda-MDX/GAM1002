@@ -13,6 +13,7 @@ public class PT_Improved_CC : MonoBehaviour
     public float FallMultiplier = 3.0f;
     public LayerMask Ground;
     public Vector3 Drag;
+    public bool groundedIndicator;
 
     private CharacterController _controller;
     private Vector3 _velocity;
@@ -29,11 +30,18 @@ public class PT_Improved_CC : MonoBehaviour
     void Update()
     {
         _isGrounded = Physics.CheckSphere(_groundChecker.position, GroundDistance, Ground, QueryTriggerInteraction.Ignore);
+        groundedIndicator = _isGrounded;
+
         if (_isGrounded && _velocity.y < 0)
+        {
+            Debug.Log("Break!");
             _velocity.y = 0f;
+        }
+            
 
         Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         _controller.Move(move * Time.deltaTime * Speed);
+
         if (move != Vector3.zero)
             transform.forward = move;
 
@@ -46,14 +54,16 @@ public class PT_Improved_CC : MonoBehaviour
         }
 
         //start to fall
-        if (_velocity.y < 0)
+        if(!_isGrounded)
         {
-            _velocity.y += (Gravity * Time.deltaTime)*FallMultiplier;
-        }else //going up
-        {
-            _velocity.y += Gravity * Time.deltaTime;
+            if (_velocity.y < 0)
+            {
+                _velocity.y += (Gravity * Time.deltaTime)*FallMultiplier;
+            }else //going up
+            {
+                _velocity.y += Gravity * Time.deltaTime;
+            }
         }
-        
 
         _velocity.x /= 1 + Drag.x * Time.deltaTime;
         _velocity.y /= 1 + Drag.y * Time.deltaTime;

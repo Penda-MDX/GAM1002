@@ -18,7 +18,10 @@ public class PT_LevelManager : MonoBehaviour {
     private float timeComplete = 0;
 	// Use this for initialization
 	void Start () {
-		
+		if(!infoBar.gameObject.activeSelf)
+        {
+            infoBar.gameObject.SetActive(true);
+        }
 	}
 	
 	// Update is called once per frame
