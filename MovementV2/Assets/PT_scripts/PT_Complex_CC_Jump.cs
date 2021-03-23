@@ -78,7 +78,7 @@ public class PT_Complex_CC_Jump : MonoBehaviour {
     {
         transform.position = levelManagerReference.lastGoodCheckpoint.position;
         //levelManagerReference.lastGoodCheckpoint.gameObject.SendMessage("ResetThisZone", SendMessageOptions.DontRequireReceiver);
-        levelManagerReference.lastGoodCheckpoint.gameObject.GetComponent<PT_CheckPoint>().ResetThisZone();
+        //levelManagerReference.lastGoodCheckpoint.gameObject.GetComponent<PT_CheckPoint>().ResetThisZone();
     }
 
 
