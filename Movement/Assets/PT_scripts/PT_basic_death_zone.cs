@@ -10,11 +10,16 @@ public class PT_basic_death_zone : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-        levelManager = GameObject.Find("LevelManager");
+        
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+        if (levelManager == null)
+        {
+            levelManager = GameObject.Find("LevelManager");
+        }
+
 		if(respawn)
         {
             //grab the last good checkpoint
@@ -32,7 +37,7 @@ public class PT_basic_death_zone : MonoBehaviour {
         {
             //this doesn't work with CC as it would need to happen in 
             //other.gameObject.transform.position = respawnPoint.transform.position;
-
+            Debug.Log("Hit");
             //turn on respawn
             respawn = true;
             collidingPlayerCharacter = other.gameObject;
