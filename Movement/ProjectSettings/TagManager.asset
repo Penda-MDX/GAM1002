@@ -9,6 +9,7 @@ TagManager:
   - Movable
   - Climbable
   - Swingable
+  - SpeedUp
   layers:
   - Default
   - TransparentFX

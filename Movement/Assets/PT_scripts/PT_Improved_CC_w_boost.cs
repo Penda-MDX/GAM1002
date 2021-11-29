@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 //based on Character controller script from  https://github.com/valgoun/CharacterController and https://medium.com/ironequal/unity-character-controller-vs-rigidbody-a1e243591483
 
-public class PT_Improved_CC : MonoBehaviour
+public class PT_Improved_CC_w_boost : MonoBehaviour
 {
     public float Speed = 5f;
     public float JumpHeight = 2f;
@@ -13,13 +13,17 @@ public class PT_Improved_CC : MonoBehaviour
     public float FallMultiplier = 3.0f;
     public LayerMask Ground;
     public Vector3 Drag;
-
+    //Added for speed up
+    public float speedUpTime = 3f;
 
     private CharacterController _controller;
     private Vector3 _velocity;
     private bool _isGrounded = true;
     private Transform _groundChecker;
-
+    //Added for speed up
+    private bool speedUp;
+    private float oldSpeed;
+    private float timeToSlow;
 
     void Start()
     {
@@ -29,8 +33,13 @@ public class PT_Improved_CC : MonoBehaviour
 
     void Update()
     {
-
-
+        //Added for speed up
+        if (speedUp && timeToSlow < Time.time)
+        {
+            Speed = oldSpeed;
+            speedUp = false;
+        }
+        //
         _isGrounded = Physics.CheckSphere(_groundChecker.position, GroundDistance, Ground, QueryTriggerInteraction.Ignore);
         if (_isGrounded && _velocity.y < 0)
             _velocity.y = 0f;
@@ -64,7 +73,17 @@ public class PT_Improved_CC : MonoBehaviour
 
         _controller.Move(_velocity * Time.deltaTime);
     }
-
-
-
+    //Added for speed up
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "SpeedUp")
+        {
+            Debug.Log("Boost!");
+            oldSpeed = Speed;
+            Speed = Speed * 3;
+            speedUp = true;
+            timeToSlow = Time.time + speedUpTime;
+            other.gameObject.SetActive(false);
+        }
+    }
 }
