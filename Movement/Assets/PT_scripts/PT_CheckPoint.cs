@@ -30,6 +30,14 @@ public class PT_CheckPoint : MonoBehaviour {
         {
             if (_Renderer.material.name == "Red (Instance)")
             {
+                //reset all the checkpoints to red
+                GameObject[] respawns = GameObject.FindGameObjectsWithTag("Checkpoint");
+
+                foreach(GameObject checkpoint in respawns)
+                {
+                    checkpoint.GetComponent<Renderer>().material = mt_Red;
+                }
+
                 //print("Change");
                 _Renderer.material = mt_Blue;
                 levelManagerReference.lastGoodCheckpoint = transform;
