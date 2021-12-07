@@ -9,11 +9,12 @@ public class PT_physics_move : MonoBehaviour
     private Rigidbody rb_Physics_RigidBody;
 
     public PT_Foot footScript;
-
+    private Vector3 respawnPoint;
     // Start is called before the first frame update
     void Start()
     {
         rb_Physics_RigidBody = GetComponent<Rigidbody>();
+        respawnPoint = transform.position;
     }
 
     // Update is called once per frame
@@ -36,5 +37,11 @@ public class PT_physics_move : MonoBehaviour
 
 
         }
+    }
+    // added to work with death zone script
+    public void FallToDeath()
+    {
+        rb_Physics_RigidBody.velocity = Vector3.zero;
+        rb_Physics_RigidBody.angularVelocity = Vector3.zero;
     }
 }
