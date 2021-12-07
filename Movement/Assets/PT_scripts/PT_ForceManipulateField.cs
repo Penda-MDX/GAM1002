@@ -16,6 +16,7 @@ public class PT_ForceManipulateField : MonoBehaviour
         public float blastTime;
         public Vector3 blastOff;
         public Rigidbody objRB;
+        public bool doneNow;
     }
     private blastish blstObj;
 
@@ -34,9 +35,20 @@ public class PT_ForceManipulateField : MonoBehaviour
         {
             if (objBlaster.blastTime < Time.time)
             {
-                Debug.Log("Blast");
-                objBlaster.objRB.AddForce(objBlaster.blastOff);
-                blastObjects.Remove(objBlaster);
+                if (objBlaster.doneNow)
+                {
+                    objBlaster.objRB.velocity = Vector3.zero;
+                    objBlaster.objRB.angularVelocity = Vector3.zero;
+                    objBlaster.objRB.useGravity = true;
+                    blastObjects.Remove(objBlaster);
+                }
+                else
+                {
+                    Debug.Log("Blast");
+                    objBlaster.objRB.AddForce(objBlaster.blastOff);
+                    objBlaster.doneNow = true;
+                    
+                }
             }
         }
     }
@@ -61,7 +73,8 @@ public class PT_ForceManipulateField : MonoBehaviour
             {
                 objRB = myRB,
                 blastOff = _tmpV3,
-                blastTime = Time.time + hoverTime
+                blastTime = Time.time + hoverTime,
+                doneNow = false
             };
 
             blastObjects.Add(blstObj);
