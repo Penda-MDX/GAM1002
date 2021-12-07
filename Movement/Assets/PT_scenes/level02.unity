@@ -130,7 +130,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 1828441310}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e12a14ecb326fc498d0f2bb54ce3dd6, type: 3}
   m_Name: 
@@ -6945,7 +6945,7 @@ PrefabInstance:
     - target: {fileID: 6084003141121237224, guid: 9cb51d1fdcc9c1941bdb650f372d240f,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9cb51d1fdcc9c1941bdb650f372d240f, type: 3}
@@ -7748,6 +7748,11 @@ PrefabInstance:
     - target: {fileID: 4422473066341352282, guid: 9cb51d1fdcc9c1941bdb650f372d240f,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6084003141121237224, guid: 9cb51d1fdcc9c1941bdb650f372d240f,
+        type: 3}
+      propertyPath: Ground.m_Bits
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
