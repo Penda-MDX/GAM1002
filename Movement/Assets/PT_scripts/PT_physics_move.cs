@@ -33,7 +33,7 @@ public class PT_physics_move : MonoBehaviour
                 _temporary_force.y = fl_jump_force;
             }
 
-            rb_Physics_RigidBody.AddForce(_temporary_force);
+            rb_Physics_RigidBody.AddForce(_temporary_force,ForceMode.Impulse);
 
 
         }

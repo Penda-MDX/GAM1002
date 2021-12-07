@@ -10,6 +10,7 @@ TagManager:
   - Climbable
   - Swingable
   - SpeedUp
+  - Danger
   layers:
   - Default
   - TransparentFX

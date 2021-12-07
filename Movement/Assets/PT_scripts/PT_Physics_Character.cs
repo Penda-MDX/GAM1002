@@ -52,5 +52,12 @@ public class PT_Physics_Character : MonoBehaviour {
             }
         }
 	}
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "SpeedUp")
+        {
+            Destroy(other.gameObject);
+        }
+    }
 
 }
