@@ -11,13 +11,28 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/01Level.unity
     guid: d80acbcc52938574db34e90d96f6e289
-  - enabled: 1
-    path: Assets/Scenes/02Level.unity
-    guid: 9a66ac307487c224390a3545d373d5d0
-  - enabled: 1
-    path: Assets/Scenes/03Level.unity
-    guid: 966faf0776c7af944987cd4e02b2a0e5
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 4231414911177d44598f242515dfba1f
+  - enabled: 1
+    path: Assets/Scenes/Menu Hub.unity
+    guid: f5d9dba4a2b1587458e6f73148755a39
+  - enabled: 1
+    path: Assets/Scenes/Mechanics Test Level.unity
+    guid: acd1202b60fb5d2409e7102020a99ba6
+  - enabled: 1
+    path: Assets/Scenes/Lily's level.unity
+    guid: d2435dd3bce16c24c809da784e4c56ff
+  - enabled: 1
+    path: Assets/Scenes/Sheldon's Level.unity
+    guid: 7ce69ee900891eb45a526fa045274732
+  - enabled: 1
+    path: Assets/Scenes/Kevin's Level.unity
+    guid: 78369efef7bfde9468dc8d140b549a79
   m_configObjects: {}
