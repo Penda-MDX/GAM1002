@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,7 +6,12 @@ public class TrebuchetControl : MonoBehaviour {
 
     //public bool TurnOn;
     public Rigidbody frontWeight;
+    public HingeJoint MainJoint;
+    public Rigidbody armRB;
+    public GameObject armObj;
+
     private float originalMass;
+
     
     private GameObject[] partsArray;
     private Vector3[] positionsArray;
@@ -31,7 +36,7 @@ public class TrebuchetControl : MonoBehaviour {
 
         //frontWeight.gameObject.SetActive(false);
         originalMass = frontWeight.mass;
-        //frontWeight.mass = 0;
+        frontWeight.mass = 0;
 
     }
 	
@@ -57,6 +62,20 @@ public class TrebuchetControl : MonoBehaviour {
             }
                 
         }
-        
-	}
+
+
+        if (Input.GetKey(KeyCode.Equals))
+        {
+            armRB.isKinematic = true;
+            armObj.transform.Translate(0,0,0.1f);
+            armRB.isKinematic = false;
+        }
+        if (Input.GetKey(KeyCode.Minus))
+        {
+            armRB.isKinematic = true;
+            armObj.transform.Translate(0, 0, -0.1f);
+            armRB.isKinematic = false;
+        }
+
+    }
 }
