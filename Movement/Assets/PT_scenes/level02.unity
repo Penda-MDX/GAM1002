@@ -5401,6 +5401,7 @@ GameObject:
   m_Component:
   - component: {fileID: 370691645}
   - component: {fileID: 370691644}
+  - component: {fileID: 370691641}
   - component: {fileID: 370691642}
   - component: {fileID: 370691646}
   m_Layer: 0
@@ -5410,6 +5411,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &370691641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 370691640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 366f21fc135d441439853e227901ba8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnScreenText: {fileID: 1618539252}
 --- !u!124 &370691642
 Behaviour:
   m_ObjectHideFlags: 0
@@ -5734,6 +5748,11 @@ PrefabInstance:
       propertyPath: messageHandler
       value: 
       objectReference: {fileID: 1153316295}
+    - target: {fileID: 114069836749064000, guid: c9749ca6a7ccac245b561f4770d6593b,
+        type: 3}
+      propertyPath: messageForTrigger
+      value: This is a message
+      objectReference: {fileID: 0}
     - target: {fileID: 199500462461550868, guid: c9749ca6a7ccac245b561f4770d6593b,
         type: 3}
       propertyPath: m_Materials.Array.size
@@ -6586,6 +6605,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af7b86fecd66ebc4ab5e130cd94988a4, type: 3}
+--- !u!114 &1618539252 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4961320264324942037, guid: 1306a0c0ed1e9844eb5a64483bb09566,
+    type: 3}
+  m_PrefabInstance: {fileID: 4961320265570957482}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1670752982
 GameObject:
   m_ObjectHideFlags: 0
@@ -7177,6 +7208,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1579381315857566, guid: 0bf7403492a82544e83041fd8d6e49e6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 114694474565939764, guid: 0bf7403492a82544e83041fd8d6e49e6,
         type: 3}
       propertyPath: showImage
@@ -7571,6 +7606,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4961320264324942036, guid: 1306a0c0ed1e9844eb5a64483bb09566,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -29
+      objectReference: {fileID: 0}
     - target: {fileID: 4961320264798011691, guid: 1306a0c0ed1e9844eb5a64483bb09566,
         type: 3}
       propertyPath: m_Pivot.x
@@ -7680,6 +7720,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Status Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4961320265440098763, guid: 1306a0c0ed1e9844eb5a64483bb09566,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -19
+      objectReference: {fileID: 0}
+    - target: {fileID: 4961320265698954508, guid: 1306a0c0ed1e9844eb5a64483bb09566,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -29
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1306a0c0ed1e9844eb5a64483bb09566, type: 3}

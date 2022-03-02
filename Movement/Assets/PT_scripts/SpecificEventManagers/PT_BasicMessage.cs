@@ -26,7 +26,7 @@ public class PT_BasicMessage : MonoBehaviour {
         }
         */
 
-        HideMessage();
+       // HideMessage();
 	}
 
     public void ShowMessage(string message, float timeOnScreen)

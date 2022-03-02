@@ -29,8 +29,9 @@ public class PT_Camera_Ball_Throw : MonoBehaviour
         if (IsOn)
         {
             Vector3 pos = Input.mousePosition;
+            distanceFromCamera += Input.mouseScrollDelta.y;
             pos.z = distanceFromCamera;
-
+            
             InGamePointer.transform.position = Camera.main.ScreenToWorldPoint(pos);
 
             //The shooting is turned on 

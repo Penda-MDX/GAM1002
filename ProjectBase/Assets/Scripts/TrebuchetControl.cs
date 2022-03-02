@@ -66,15 +66,11 @@ public class TrebuchetControl : MonoBehaviour {
 
         if (Input.GetKey(KeyCode.Equals))
         {
-            armRB.isKinematic = true;
-            armObj.transform.Translate(0,0,0.1f);
-            armRB.isKinematic = false;
+            gameObject.transform.parent.transform.Translate(0, 0, 1 * Time.deltaTime);
         }
         if (Input.GetKey(KeyCode.Minus))
         {
-            armRB.isKinematic = true;
-            armObj.transform.Translate(0, 0, -0.1f);
-            armRB.isKinematic = false;
+            gameObject.transform.parent.transform.Translate(0, 0, -1 * Time.deltaTime);
         }
 
     }

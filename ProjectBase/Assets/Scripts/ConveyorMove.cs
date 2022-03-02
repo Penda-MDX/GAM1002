@@ -27,7 +27,7 @@ public class ConveyorMove : MonoBehaviour
             if (activated)
             {
                 Vector3 _direcion = transform.TransformDirection(Vector3.forward * forceOfMovement);
-                _tempRB.AddForce(_direcion);
+                _tempRB.AddForce(_direcion,ForceMode.Force);
             }
         }
     }

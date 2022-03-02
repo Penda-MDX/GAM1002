@@ -53,13 +53,13 @@ public class TrebuchetControlsImproved : MonoBehaviour
         //Fire 
         if (Input.GetKeyUp("f"))
         {
-            //reloadingWinch.spring = 0;
+            reloadingWinch.spring = 0;
             reloadMass.mass = 0;
         }
 
         if (Input.GetKeyUp("l"))
         {
-            // reloadingWinch.spring += 150;
+            reloadingWinch.spring += 150;
             reloadMass.mass += 100;
         }
 
