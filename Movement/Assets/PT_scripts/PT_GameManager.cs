@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 
 public class PT_GameManager : MonoBehaviour
 {
     public Transform levelStartPoint;
+    public Text studentNumber;
 
     private GameObject PlayerCharacter;
     private bool ResetPC;
