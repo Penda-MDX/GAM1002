@@ -15,6 +15,7 @@ public class PT_basic_death_zone : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+
         if (levelManager == null)
         {
             levelManager = GameObject.Find("LevelManager");
@@ -41,6 +42,9 @@ public class PT_basic_death_zone : MonoBehaviour {
             //turn on respawn
             respawn = true;
             collidingPlayerCharacter = other.gameObject;
+
+
+            other.gameObject.SendMessage("Respawn");
             
         }
     }
