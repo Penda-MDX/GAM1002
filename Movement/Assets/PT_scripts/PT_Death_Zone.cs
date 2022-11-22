@@ -4,19 +4,11 @@ using UnityEngine;
 
 public class PT_Death_Zone : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
 
     void OnTriggerEnter(Collider other)
     {
-        //print("Death");
+        Debug.Log("Death");
         other.gameObject.SendMessage("FallToDeath",null, SendMessageOptions.DontRequireReceiver);
     }
 }
