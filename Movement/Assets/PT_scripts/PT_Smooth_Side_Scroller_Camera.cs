@@ -38,7 +38,7 @@ public class PT_Smooth_Side_Scroller_Camera : MonoBehaviour
         v3_new_camera_position.y = go_thingToBeFollowed.transform.position.y - fl_distanceOn_yAxis;
         v3_new_camera_position.z = go_thingToBeFollowed.transform.position.z - fl_distanceOn_zAxis;
         //
-        if (v3_new_camera_position.y != transform.position.y || v3_new_camera_position.x != transform.position.x || v3_new_camera_position.y != transform.position.y)
+        if (v3_new_camera_position.z != transform.position.z || v3_new_camera_position.x != transform.position.x || v3_new_camera_position.y != transform.position.y)
         {
             if (!interpolating)
             {

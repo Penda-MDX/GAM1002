@@ -1105,7 +1105,7 @@ MonoBehaviour:
   fl_distanceOn_xAxis: -3
   fl_distanceOn_yAxis: -3
   bl_pointAt: 1
-  speed: 1
+  speed: 3
 --- !u!1001 &1733503246
 PrefabInstance:
   m_ObjectHideFlags: 0
