@@ -5,7 +5,7 @@ using UnityEngine;
 public class PT_Trigger_MultiObject_States : MonoBehaviour
 {
 
-    public string currentState;
+    public int currentState;
     public List<GameObject> ManagedObjects;
     public string[] states;
     public bool bl_activate = false;
@@ -19,7 +19,16 @@ public class PT_Trigger_MultiObject_States : MonoBehaviour
         if (Input.GetKeyUp("e") && bl_canActivate)
         {
             bl_activate = !bl_activate;
-            objectToActivate.SetActive(bl_activate);
+            // objectToActivate.SetActive(bl_activate);
+            currentState++;
+            if(currentState >= states.Length)
+            {
+                currentState = 0;
+            }
+           foreach(GameObject gob in ManagedObjects)
+           {
+                gob.SendMessage("StateChange", states[currentState], SendMessageOptions.DontRequireReceiver);
+           }
         }
     }
 
