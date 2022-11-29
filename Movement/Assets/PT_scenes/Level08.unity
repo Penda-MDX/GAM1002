@@ -460,6 +460,11 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1241052060032834, guid: 147d6545703065e469dfa44d87fa902b, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000,
+        type: 0}
+    - target: {fileID: 1241052060032834, guid: 147d6545703065e469dfa44d87fa902b, type: 3}
       propertyPath: m_Name
       value: Death_Zone
       objectReference: {fileID: 0}
@@ -824,6 +829,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 23204975783211490, guid: af7b86fecd66ebc4ab5e130cd94988a4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b7ae451dfc9f15468ec1307e120fedc, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af7b86fecd66ebc4ab5e130cd94988a4, type: 3}
 --- !u!1001 &1573680628
@@ -1358,6 +1368,12 @@ PrefabInstance:
       propertyPath: Ground.m_Bits
       value: 256
       objectReference: {fileID: 0}
+    - target: {fileID: 7579979619709379173, guid: aeee840bbee545c479b0366c33aab1bf,
+        type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000,
+        type: 0}
     - target: {fileID: 7579979619709379173, guid: aeee840bbee545c479b0366c33aab1bf,
         type: 3}
       propertyPath: m_Name
