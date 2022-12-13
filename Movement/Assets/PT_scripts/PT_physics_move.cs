@@ -37,11 +37,20 @@ public class PT_physics_move : MonoBehaviour
 
 
         }
+
+        if (Input.GetKeyUp("r"))
+        {
+            FallToDeath();
+        }
     }
     // added to work with death zone script
     public void FallToDeath()
     {
         rb_Physics_RigidBody.velocity = Vector3.zero;
         rb_Physics_RigidBody.angularVelocity = Vector3.zero;
+        //reset size
+        transform.localScale = new Vector3(1, 1, 1);
+        //
+        transform.position = respawnPoint;
     }
 }

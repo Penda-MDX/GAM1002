@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PT_basic_death_zone : MonoBehaviour {
-    
+    //self contained respawn
     private bool respawn;
     private GameObject collidingPlayerCharacter;
     private GameObject levelManager;
