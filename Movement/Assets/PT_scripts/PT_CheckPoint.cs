@@ -28,7 +28,7 @@ public class PT_CheckPoint : MonoBehaviour {
         //print(_Renderer.material.name);
         if(other.gameObject.tag =="Player")
         {
-            if (_Renderer.material.name == "Red (Instance)")
+            if (_Renderer.material.name == mt_Red.name + " (Instance)")
             {
                 //reset all the checkpoints to red
                 GameObject[] respawns = GameObject.FindGameObjectsWithTag("Checkpoint");
