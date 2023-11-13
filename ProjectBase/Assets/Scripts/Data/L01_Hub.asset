@@ -15,4 +15,4 @@ MonoBehaviour:
   doorName: To Hub
   targetSceneName: 00Hub
   arrivalPosition: {x: -12.5, y: 1.6, z: 20}
-  arrivalRotation: {x: 0, y: 90, z: 0}
+  arrivalRotation: {x: 0, y: -270, z: 0}

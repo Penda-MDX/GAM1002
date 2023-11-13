@@ -41,6 +41,8 @@ public class ArrivalManager : MonoBehaviour
             arrival = false;
             PC.transform.position = currentTransitionManager.currentDoorTransition.arrivalPosition;
             PC.transform.eulerAngles = currentTransitionManager.currentDoorTransition.arrivalRotation;
+            //PC.transform.Find("Main Camera").transform.eulerAngles= new Vector3(0,0,0);
+            Debug.Log("Arrival rotation: " + currentTransitionManager.currentDoorTransition.arrivalRotation);
             currentTransitionManager.transiting = false;
         }
     }
